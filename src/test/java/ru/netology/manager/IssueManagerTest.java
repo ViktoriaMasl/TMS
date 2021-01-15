@@ -22,9 +22,9 @@ class IssueManagerTest {
     private HashSet<String> label2 = new HashSet<>((Arrays.asList("task")));
     private HashSet<String> label3 = new HashSet<>((Arrays.asList("enhancement")));
 
-    private Issue first = new Issue(1,"Толстой", true, assignee2, "text1", label2, "2019/11/28");
-    private Issue second  = new Issue(2,"Кузин", false, assignee1, "text2", label1, "2020/06/22");
-    private Issue third  = new Issue(3,"Кузин", true, assignee3, "text3", label3, "2021/01/10");
+    private Issue first = new Issue(1, "Толстой", true, assignee2, "text1", label2, "2019/11/28");
+    private Issue second = new Issue(2, "Кузин", false, assignee1, "text2", label1, "2020/06/22");
+    private Issue third = new Issue(3, "Кузин", true, assignee3, "text3", label3, "2021/01/10");
 
     @BeforeEach
     void setUp() {
@@ -60,7 +60,7 @@ class IssueManagerTest {
 
     @Test
     void shouldFilterByAuthorNotExist() {
-        assertArrayEquals(new Issue[]{},manager.filterBy(issue -> issue.getAuthor().equals("Смирнов")).toArray());
+        assertArrayEquals(new Issue[]{}, manager.filterBy(issue -> issue.getAuthor().equals("Смирнов")).toArray());
     }
 
     @Test
